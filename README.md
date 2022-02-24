@@ -1,18 +1,35 @@
-# Salesforce DX Project: Next Steps
+# Apex Windfarm
+Leads are the wind power of all organisations.
+Accounts, Contacts and Opportunities are the energy that feeds them and makes all the things happen.
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+```
+ __        __                 __        __                 __        __
+ \ \      / /                 \ \      / /                 \ \      / /
+  \ \    / /                   \ \    / /                   \ \    / /
+   \ \  / /                     \ \  / /                     \ \  / /
+    \ \/ /                       \ \/ /                       \ \/ / 
+     (  )                         (  )                         (  )  
+    / /\ \                       / /\ \                       / /\ \ 
+   / /  \ \                     / /  \ \                     / /  \ \
+  / /|  |\ \                   / /|  |\ \                   / /|  |\ \
+ /_/ |  | \_\                 /_/ |  | \_\                 /_/ |  | \_\
+    _|  |_                       _|  |_                       _|  |_
+   |      |                     |      |                     |      |
+   | APEX |                     | WIND |                     | FARM |
+   |_    _|                     |_    _|                     |_    _|
+     |  |                         |  |                         |  |
+_____|__|_____               _____|__|_____               _____|__|_____ 
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+```
 
-## How Do You Plan to Deploy Your Changes?
+## Introduction
+Unfortunatelly, Apex internal codebase doesn't tackle this conversion the best way. We'll briefly discuss here how `Database.LeadConvert` seems to hurt quite a few best practices and principles and how poor the decision to delegate all the validations to `Database.convertLead()` is, as it requires all the burden of a database call to realise there could be a mistaken setup.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Windfarm is a way to both help build the conversion setup and to check for errors before hitting the database, consequently keeping your code lightweight.  
 
-## Configure Your Salesforce DX Project
+**Deploy this to your Salesforce Org:**
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+[![Deploy to Salesforce](https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png)](https://githubsfdeploy.herokuapp.com/?owner=berardo&repo=apex-windfarm&ref=master)
 
-## Read All About It
+## Overview
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
