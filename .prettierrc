@@ -1,5 +1,9 @@
 {
   "trailingComma": "none",
+  "printWidth": 100,
+  "apexInsertFinalNewline": true,
+  "tabWidth": 2,
+  "useTabs": false,
   "overrides": [
     {
       "files": "**/lwc/**/*.html",
